@@ -49,7 +49,7 @@ $(BUILD_DIR)/cycle_100.s: src/micro/macros.m4 src/micro/cycle.m4 src/micro/kerne
 define MAKE_ASSEMBLY =
 $(BUILD_DIR)/$(1)%.s: src/micro/macros.m4 src/$(1).m4 src/micro/kernel.s
 	@mkdir -p $$(@D)
-	m4 -DREPS=$$(subst _,,$$*) $$^ > $$@
+	m4 -DREPS=$$(subst _,,$$*) $$^ | sed '/^$$$$/d' > $$@
 endef
 
 define MAKE_MICRO_DRIVER =
