@@ -1,8 +1,9 @@
-define(`INT_ADCS',    `  adcs x`$1', x14, x15
+define(`FP_FADD_INT_ADCS',     `
+  fadd d`'eval(2*`$1'+10), d28, d29
+  adcs x`'eval(2*`$1'+0),  x14, x15
+  fadd d`'eval(2*`$1'+11), d28, d29
+  adcs x`'eval(2*`$1'+1),  x14, x15
 ')
-define(`FP_FADD',     `  fadd d`$1', d28, d29
-')
-define(`KERNEL_T',    `FP_FADD(eval(`$1'+16))INT_ADCS(eval(`$1'+4))')
-define(`KERNEL',      `forloop_arg(0,7,`KERNEL_T')')
+define(`KERNEL',      `forloop_arg(3,6,`FP_FADD_INT_ADCS')')
 define(`KERNEL_REPS', `eval(REPS/16)')
 define(`KERNEL_NAME', KERNEL_BASENAME(__file__)`_'eval(REPS))
