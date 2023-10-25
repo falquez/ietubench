@@ -9,11 +9,15 @@ void initialize_params(int argc, char *argv[], Params *p) {
   p->iter = 1E7;
   p->reps = 100;
   p->verb = 1;
+  p->ocsv  = 0;
   p->mghz = 0;
   p->flen = 0;
   p->fname[0] = 0;
-  while ((c = getopt(argc, argv, "hsc:r:i:f:")) != -1) {
+  while ((c = getopt(argc, argv, "hsoc:r:i:f:")) != -1) {
     switch (c) {
+    case 'o':
+      p->ocsv = 1;
+      break;
     case 's':
       p->verb = 0;
       break;

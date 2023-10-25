@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
   double clock_cy = 0.0;
   double clock_fr = (double)cntfrq() / 1e9;
 
-  const char name[] = "kernel: " TO_STR(KERNEL_NAME) " loop: " TO_STR(KERNEL_NINST) "\t";
+  const char name[] = TO_STR(KERNEL_NAME);
 
   initialize_params(argc, argv, &params);
   initialize_data(&data, &params);
@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
 #endif
   }
 
-  print_stats(time, niter * ninst, nreps, clock_cy, clock_fr, name, "ops");
+  print_stats(&params, time, ninst, clock_cy, clock_fr, name, "op");
 
   free(time);
   free(data);

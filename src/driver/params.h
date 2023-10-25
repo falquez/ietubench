@@ -6,12 +6,13 @@
 #endif
 
 typedef struct {
-  char fname[MAX_FILENAME_LEN];
   int flen;
   int reps;
   int iter;
   int verb;
   int mghz;
+  int ocsv;
+  char fname[MAX_FILENAME_LEN];
 } Params;
 
 void initialize_params(int argc, char *argv[], Params *p);
