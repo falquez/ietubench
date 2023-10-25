@@ -94,6 +94,24 @@ define(`KERNEL_INT64_INT64_INT64_INT64_C',     `
   INT3 x`'eval(2*`$1'+5), x20, x21
   INT4 x4, x4, x5
 ')
+define(`KERNEL_INT64_FP64_INT64_FP64_A',     `
+  INT1 x`'eval(2*`$1'+4),  x14, x15
+  FP1  d`'eval(2*`$1'+14), d28, d29
+  INT2 x`'eval(2*`$1'+5),  x14, x15
+  FP2  d`'eval(2*`$1'+15), d28, d29
+')
+define(`KERNEL_INT64_FP64_INT64_FP64_B',     `
+  INT1 x`'eval(2*`$1'+4),  x`'eval(2*`$1'+4),  x`'eval(2*`$1'+4)
+  FP1  d`'eval(2*`$1'+14), d`'eval(2*`$1'+14), d`'eval(2*`$1'+14)
+  INT2 x`'eval(2*`$1'+5),  x`'eval(2*`$1'+5),  x`'eval(2*`$1'+5)
+  FP2  d`'eval(2*`$1'+15), d`'eval(2*`$1'+15), d`'eval(2*`$1'+15)
+')
+define(`KERNEL_INT64_FP64_INT64_FP64_C',     `
+  INT1 x`'eval(4*`$1'+2), x20, x21
+  FP1  d4, d4, d5
+  INT2 x`'eval(4*`$1'+3), x20, x21
+  FP2  d4, d4, d5
+')
 define(`KERNEL_INT32_A',     `
   INT1 w`'eval(`$1'+3), w20, w21
 ')
