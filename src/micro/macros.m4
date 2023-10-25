@@ -26,4 +26,92 @@ forloop_arg(1,KERNEL_REPS,`KERNEL')
   cbnz x0, KERNEL_NAME`'_loop
 
 ')
+define(`KERNEL_INT64_A',     `
+  INT1 x`'eval(`$1'+3), x20, x21
+')
+define(`KERNEL_INT64_B',     `
+  INT1 x`'eval(`$1'+3), x`'eval(`$1'+3), x`'eval(`$1'+3)
+')
+define(`KERNEL_INT64_4_A',     `
+  INT1 x`'eval(`$1'+3), x20, x21, x22
+')
+define(`KERNEL_INT64_4_B',     `
+  INT1 x`'eval(`$1'+3), x`'eval(`$1'+3), x`'eval(`$1'+3), x`'eval(`$1'+3)
+')
+define(`KERNEL_INT64_INT64_A',     `
+  INT1 x`'eval(2*`$1'+2), x20, x21
+  INT2 x`'eval(2*`$1'+3), x20, x21
+')
+define(`KERNEL_INT64_4_INT64_A',     `
+  INT1 x`'eval(2*`$1'+2), x20, x21, x22
+  INT2 x`'eval(2*`$1'+3), x20, x21
+')
+define(`KERNEL_INT64_INT64_4_A',     `
+  INT1 x`'eval(2*`$1'+2), x20, x21
+  INT2 x`'eval(2*`$1'+3), x20, x21, x22
+')
+define(`KERNEL_INT64_INT64_B',     `
+  INT1 x`'eval(2*`$1'+2), x`'eval(2*`$1'+2), x`'eval(2*`$1'+2)
+  INT2 x`'eval(2*`$1'+3), x`'eval(2*`$1'+3), x`'eval(2*`$1'+3)
+')
+define(`KERNEL_INT64_4_INT64_B',     `
+  INT1 x`'eval(2*`$1'+2), x`'eval(2*`$1'+2), x`'eval(2*`$1'+2), x`'eval(2*`$1'+2)
+  INT2 x`'eval(2*`$1'+3), x`'eval(2*`$1'+3), x`'eval(2*`$1'+3)
+')
+define(`KERNEL_INT64_INT64_C',     `
+  INT1 x`'eval(2*`$1'+4), x20, x21
+  INT2 x4, x4, x5
+  INT1 x`'eval(2*`$1'+5), x20, x21
+  INT2 x4, x4, x5
+')
+define(`KERNEL_INT64_4_INT64_C',     `
+  INT1 x`'eval(2*`$1'+4), x20, x21, x22
+  INT2 x4, x4, x5
+  INT1 x`'eval(2*`$1'+5), x20, x21, x22
+  INT2 x4, x4, x5
+')
+define(`KERNEL_INT64_INT64_4_C',     `
+  INT1 x`'eval(2*`$1'+4), x20, x21
+  INT2 x4, x5, x22, x4
+  INT1 x`'eval(2*`$1'+5), x20, x21
+  INT2 x4, x5, x22, x4
+')
+define(`KERNEL_INT64_INT64_INT64_INT64_A',     `
+  INT1 x`'eval(4*`$1'+0), x20, x21
+  INT2 x`'eval(4*`$1'+1), x20, x21
+  INT3 x`'eval(4*`$1'+2), x20, x21
+  INT4 x`'eval(4*`$1'+3), x20, x21
+')
+define(`KERNEL_INT64_INT64_INT64_INT64_B',     `
+  INT1 x`'eval(4*`$1'+0), x`'eval(4*`$1'+0), x`'eval(4*`$1'+0)
+  INT2 x`'eval(4*`$1'+1), x`'eval(4*`$1'+1), x`'eval(4*`$1'+1)
+  INT3 x`'eval(4*`$1'+2), x`'eval(4*`$1'+2), x`'eval(4*`$1'+2)
+  INT4 x`'eval(4*`$1'+3), x`'eval(4*`$1'+3), x`'eval(4*`$1'+3)
+')
+define(`KERNEL_INT64_INT64_INT64_INT64_C',     `
+  INT1 x`'eval(2*`$1'+4), x20, x21
+  INT2 x4, x4, x5
+  INT3 x`'eval(2*`$1'+5), x20, x21
+  INT4 x4, x4, x5
+')
+define(`KERNEL_INT32_A',     `
+  INT1 w`'eval(`$1'+3), w20, w21
+')
+define(`KERNEL_INT32_B',     `
+  INT1 w`'eval(`$1'+3), w`'eval(`$1'+3), w`'eval(`$1'+3)
+')
+define(`KERNEL_INT32_4_A',     `
+  INT1 w`'eval(`$1'+3), w20, w21, w22
+')
+define(`KERNEL_INT32_4_B',     `
+  INT1 w`'eval(`$1'+3), w`'eval(`$1'+3), w`'eval(`$1'+3), w`'eval(`$1'+3)
+')
+define(`KERNEL_INT32_INT32_A',     `
+  INT1 w`'eval(2*`$1'+2), w20, w21
+  INT2 w`'eval(2*`$1'+3), w20, w21
+')
+define(`KERNEL_INT32_INT32_B',     `
+  INT1 w`'eval(2*`$1'+2), w`'eval(2*`$1'+2), w`'eval(2*`$1'+2)
+  INT2 w`'eval(2*`$1'+3), w`'eval(2*`$1'+2), w`'eval(2*`$1'+2)
+')
 divert`'dnl

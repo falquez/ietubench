@@ -1,7 +1,5 @@
-define(`INT_ADD_INT_ADC',     `
-add    x`'eval(2*`$1'+2), x`'eval(2*`$1'+2), x`'eval(2*`$1'+2)
-adc    x`'eval(2*`$1'+3), x`'eval(2*`$1'+3), x`'eval(2*`$1'+3)
-')
-define(`KERNEL',      `forloop_arg(1,8,`INT_ADD_INT_ADC')')
+define(`INT1', `add')
+define(`INT2', `adc')
+define(`KERNEL',      `forloop_arg(1,8,`KERNEL_INT64_INT64_B')')
 define(`KERNEL_REPS', `eval(REPS/16)')
 define(`KERNEL_NAME', KERNEL_BASENAME(__file__)`_'eval(REPS))

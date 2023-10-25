@@ -1,5 +1,4 @@
-define(`INT_MADD',     `  madd x`$1', x`$1', x`$1', x`$1'
-')
-define(`KERNEL',      `forloop_arg(4,19,`INT_MADD')')
+define(`INT1', `madd')
+define(`KERNEL',      `forloop_arg(1,16,`KERNEL_INT64_4_B')')
 define(`KERNEL_REPS', `eval(REPS/16)')
 define(`KERNEL_NAME', KERNEL_BASENAME(__file__)`_'eval(REPS))
